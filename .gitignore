@@ -1,2 +1,4 @@
 env-*
 praat-formant-python/*
+**.tar.gz
+Praat/*
