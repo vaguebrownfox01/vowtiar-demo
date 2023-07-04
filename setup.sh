@@ -4,6 +4,9 @@ if [ -d "env-vow" ]; then
     echo "env-vow exists"
 else
     echo "env-vow does not exist."
+
+    echo "Creating env-vow environment with requirements"
+
     python3 -m venv env-vow
     pip3 install -r requirements.txt
 fi
@@ -16,10 +19,16 @@ if [ -f "/usr/local/sbin/praat" ]; then
 else
     echo "praat does not exist."
 
-    wget https://www.fon.hum.uva.nl/praat/praat6310_linux64.tar.gz -O praat/praat.tar.gz
+    echo "Installing praat"
+
+    if ! [-d "Praat"]; then
+        mkdir Praat
+    fi
+
+    wget https://www.fon.hum.uva.nl/praat/praat6310_linux64.tar.gz -O Praat/praat.tar.gz
     tar -xzf praat/praat.tar.gz -C praat/
     rm praat/praat.tar.gz
-    sudo ln -sf "$(pwd)/praat/praat" "/usr/local/sbin/"
+    sudo ln -sf "$(pwd)/Praat/praat" "/usr/local/sbin/"
 fi
 
 
