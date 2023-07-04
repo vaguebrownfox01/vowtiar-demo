@@ -10,6 +10,7 @@ This repository contains a Python script that performs real-time formant frequen
 
 To run the script, you'll need the following:
 
+- Linux (tested on Ubuntu 20.04)
 - Praat (for formant estimation)
 - Python (version 3.9 or higher)
 - Required Python packages (specified in `requirements.txt`)
